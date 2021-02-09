@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Weather App</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Weather App</span>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <form id="weather-form" action='/' method="POST">
+            <div class="mb-3">
+                <label for="inputCity" class="form-label">City</label>
+                <input required type="text" class="form-control" id="inputCity" aria-describedby="cityHelp">
+                <div id="cityHelp" class="form-text">Please enter the city that you want check weather.</div>
+            </div>
+            <div class="mb-3">
+                <label for="inputDate" class="form-label">Date</label>
+                <input required type="date" class="form-control" id="inputDate">
+            </div>
+            <button id="submit-button" class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="container mt-5">
+        <h1 id="msg" class="display-3"></h1>
+        <div id="result" class="row row-cols-sm-1 row-cols-md-3 g-4" style="visibility: hidden;">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 id="selected-date" class="card-title"><span id="result-date"></span></h2>
+                        <div class="row">
+                            <div class="col-md-auto">
+                                <img id="selected-icon" alt="weather-img">
+                            </div>
+                            <div class="col-md-auto">
+                                <h1 id="selected-temp" class="display-3"><span id="result-temp"></span> C</h1>
+                            </div>
+                        </div>
+
+                        <h5 id="selected-cond"><span id="result-state"></span></h5>
+                        <h5 id="selected-max">Max Temp. : <span id="result-max"></span></h5>
+                        <h5 id="selected-min">Min Temp. : <span id="result-min"></span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/javascripts/script.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
